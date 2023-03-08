@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const Container = styled.button`
   border: none;
   border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
 
   background-color: ${({ theme }) => theme.COLORS.TOMATO_200};
   color: ${({ theme }) => theme.COLORS.LIGHT_100};
