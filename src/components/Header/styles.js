@@ -1,16 +1,19 @@
 import searchIcon from "../../assets/searchIcon.svg";
+import orderIcon from "../../assets/Order.svg";
 
 import styled from "styled-components";
 
 export const Container = styled.div`
   max-width: 1200 px;
   margin: 0 auto;
-  padding: 3.7rem 0;
+  padding: 3.7rem 2rem;
 
   header {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
+    position: relative;
   }
 
   header input {
@@ -20,7 +23,7 @@ export const Container = styled.div`
     border: none;
     background-image: url(${searchIcon});
     background-repeat: no-repeat;
-    background-position: 13rem center;
+    background-position: 10rem center;
     border-radius: 0.5rem;
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
 
@@ -36,7 +39,7 @@ export const Container = styled.div`
   }
 
   .divInput {
-    width: 580px;
+    width: 500px;
   }
 
   .logOut {
@@ -49,5 +52,61 @@ export const Container = styled.div`
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
     width: 2.2rem;
     height: 2.2rem;
+  }
+
+  .mobileMenu-icon {
+    display: none;
+    background: none;
+    border: none;
+
+    color: ${({ theme }) => theme.COLORS.LIGHT_100};
+    cursor: pointer;
+  }
+  .mobileMenu-icon svg {
+    width: 2.4rem;
+    height: 1.8rem;
+  }
+
+  .orderIcon {
+    display: none;
+    width: 2.6rem;
+    height: 2.2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    background-image: url(${orderIcon});
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+  }
+
+  .item {
+    position: absolute;
+    background-color: ${({ theme }) => theme.COLORS.TOMATO_100};
+    color: ${({ theme }) => theme.COLORS.LIGHT_100};
+    border-radius: 100%;
+    padding: 0.2rem 0.6rem;
+    top: -9px;
+  }
+  .nav-mobile {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    background-color: red;
+    top: 40px;
+  }
+
+  @media (max-width: 950px) {
+    .divInput,
+    .logOut,
+    .Order {
+      display: none;
+    }
+    .mobileMenu-icon,
+    .orderIcon,
+    .nav-mobile {
+      display: block;
+    }
   }
 `;
