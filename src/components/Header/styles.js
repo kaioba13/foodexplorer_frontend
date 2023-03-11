@@ -4,19 +4,20 @@ import orderIcon from "../../assets/Order.svg";
 import styled from "styled-components";
 
 export const Container = styled.div`
-  max-width: 1200 px;
-  margin: 0 auto;
-  padding: 3.7rem 2rem;
+  background-color: ${({ theme }) => theme.COLORS.DARK_700};
 
   header {
+    max-width: 1200 px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     position: relative;
+    padding: 2rem 2rem;
   }
 
-  header input {
+  .divInput input {
     width: 100%;
     padding: 1.6rem 0;
     background-color: ${({ theme }) => theme.COLORS.DARK_900};
@@ -26,6 +27,20 @@ export const Container = styled.div`
     background-position: 10rem center;
     border-radius: 0.5rem;
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
+
+    text-align: center;
+  }
+  .divInput2 input {
+    width: 100%;
+    padding: 1.6rem 0;
+    background-color: ${({ theme }) => theme.COLORS.DARK_900};
+    border: none;
+    background-image: url(${searchIcon});
+    background-repeat: no-repeat;
+    background-position: left center;
+    border-radius: 0.5rem;
+    color: ${({ theme }) => theme.COLORS.LIGHT_100};
+    margin-bottom: 4.6rem;
 
     text-align: center;
   }
@@ -39,13 +54,34 @@ export const Container = styled.div`
   }
 
   .divInput {
-    width: 500px;
+    width: 580px;
   }
 
   .logOut {
     background: none;
     border: none;
     cursor: pointer;
+  }
+
+  .menu-mobile {
+    visibility: hidden;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  .mobile-content {
+    width: 100%;
+    height: 200px;
+    padding: 3.6rem 2.8rem;
+    position: absolute;
+    top: 35px;
+    background-color: ${({ theme }) => theme.COLORS.DARK_400};
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 0.5rem 0.5rem 0;
   }
 
   .logOut svg {
@@ -55,7 +91,6 @@ export const Container = styled.div`
   }
 
   .mobileMenu-icon {
-    display: none;
     background: none;
     border: none;
 
@@ -67,8 +102,22 @@ export const Container = styled.div`
     height: 1.8rem;
   }
 
+  .logout-mobile {
+    background: none;
+    border: none;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2.4rem;
+    color: ${({ theme }) => theme.COLORS.LIGHT_300};
+    cursor: pointer;
+  }
+  .logout-mobile:hover {
+    opacity: 0.9;
+    transition: 0.1s;
+  }
+
   .orderIcon {
-    display: none;
     width: 2.6rem;
     height: 2.2rem;
     background: none;
@@ -100,13 +149,12 @@ export const Container = styled.div`
   @media (max-width: 950px) {
     .divInput,
     .logOut,
-    .Order {
+    .Order,
+    .logo1 {
       display: none;
     }
-    .mobileMenu-icon,
-    .orderIcon,
-    .nav-mobile {
-      display: block;
+    .menu-mobile {
+      visibility: visible;
     }
   }
 `;
